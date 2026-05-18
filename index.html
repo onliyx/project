@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Молодёжь и старшее поколение</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="global-noise"></div>
+
+    <div class="lang-controls">
+        <button onclick="changeLang('ru')" class="lang-btn active">RU</button>
+        <button onclick="changeLang('fr')" class="lang-btn">FR</button>
+    </div>
+
+    <div class="grid-container">
+        <!-- 1. ЗАГОЛОВОК -->
+        <header class="grid-item head-block">
+            <h1 id="main-title"></h1>
+            <p id="main-subtitle"></p>
+        </header>
+
+        <!-- 2. ОПИСАНИЕ -->
+        <div class="grid-item desc-block">
+            <p id="main-desc"></p>
+        </div>
+
+        <!-- 3-4. БОКОВЫЕ ПОЛОСЫ -->
+        <div class="grid-item side-l"><div class="straight-bar l"></div></div>
+        <div class="grid-item side-r"><div class="straight-bar r"></div></div>
+
+        <!-- 5. ТВ ВЕРХНИЙ -->
+        <div class="grid-item tv-top-block">
+            <div class="tv-container-main">
+                <div class="tv-title" id="tv-text-1"></div>
+                <div class="tv-wrapper">
+                    <img src="assets/img/tv.png" alt="TV">
+                    <div class="tv-video-container" id="video-young">
+                        <video id="my-video-young" src="assets/vid/young.mp4"></video>
+                        <div class="video-ui">
+                            <button class="ui-play-btn" id="play-btn-young"></button>
+                            <div class="ui-controls-group">
+                                <input type="range" id="pbar-young" value="0" min="0" max="100" class="ui-slider">
+                                <div class="ui-time" id="time-young">00:00 / 00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. ПЛЕНКА (ЦЕНТРАЛЬНЫЙ БЛОК - ВОПРОСЫ) -->
+        <div class="grid-item strip-mid-block">
+            <div class="strip-section">
+                <div class="strip-header" id="themes-title"></div>
+                <div class="red-shape"></div>
+                <div class="strip-wrapper">
+                    <img src="assets/img/strip1.png" alt="Strip" class="cropped-strip" id="strip-img">
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. ТВ НИЖНИЙ -->
+        <div class="grid-item tv-bottom-block">
+            <div class="tv-container-main">
+                <div class="tv-title" id="tv-text-2"></div>
+                <div class="tv-wrapper">
+                    <img src="assets/img/tv.png" alt="TV">
+                    <div class="tv-video-container" id="video-old">
+                        <video id="my-video-old" src="assets/vid/old.mov"></video>
+                        <div class="video-ui">
+                            <button class="ui-play-btn" id="play-btn-old"></button>
+                            <div class="ui-controls-group">
+                                <input type="range" id="pbar-old" value="0" min="0" max="100" class="ui-slider">
+                                <div class="ui-time" id="time-old">00:00 / 00:00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- НОВЫЙ БЛОК: ОСНОВНАЯ ИДЕЯ -->
+        <div class="grid-item idea-block">
+            <h2 id="idea-title"></h2>
+            <p id="idea-text"></p>
+            <div class="accent-line"></div>
+        </div>
+
+        <!-- НОВЫЙ БЛОК: ПОЧЕМУ ЭТО ВАЖНО -->
+        <div class="grid-item importance-block">
+            <h2 id="importance-title"></h2>
+            <div id="importance-list" class="styled-list"></div>
+        </div>
+
+        <!-- 10. ИТОГ -->
+        <footer class="grid-item footer-block">
+            <div class="final-conclusion">
+                <h2 id="final-title"></h2>
+                <p id="final-text"></p>
+            </div>
+        </footer>
+    </div>
+
+    <svg style="display: none;">
+        <filter id="noise">
+            <feTurbulence type="fractalNoise" baseFrequency="0.4" numOctaves="10" stitchTiles="stitch" />
+            <feColorMatrix type="saturate" values="0" />
+        </filter>
+    </svg>
+    <script src="script.js"></script>
+</body>
+</html>
